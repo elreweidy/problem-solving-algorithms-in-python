@@ -1,0 +1,103 @@
+def queensAttack(n, k, r_q, c_q, obstacles):
+    result = 0
+    step = 0
+    r = r_q
+    c = c_q
+    while(r !=n and c !=n):
+        r = r + 1
+        c = c + 1
+        step +=1
+    r = r_q
+    c = c_q
+    while(r != 1 and c !=1):
+        r = r - 1
+        c = c - 1
+        step +=1
+    r = r_q
+    c = c_q
+    while(r !=n and c !=n):
+        r = r + 1
+        c = c - 1
+        step +=1
+    r = r_q
+    c = c_q
+    while(r !=n and c !=n):
+        r = r - 1
+        c = c + 1
+        step +=1
+        
+        
+    if k == 0:
+        result += (n-1) * 2 + step
+        return result
+    else:
+    #======================================================
+        r = r_q
+        c = c_q
+        row = 0
+        col = 0
+        result = 0
+        for obs in obstacles:
+            row = obs[0]
+            col = col[1]
+            
+        while(r != n):
+            r = r + 1
+            c = c
+            if row == r and col == c:
+                break
+            step +=1
+        while(c !=n):
+            r = r 
+            c = c + 1
+            if row == r and col == c:
+                break
+            step +=1
+        while(r !=1):
+            r = r - 1
+            c = c 
+            if row == r and col == c:
+                break
+            step +=1
+        while(c !=1):
+            r = r 
+            c = c - 1
+            if row == r and col == c:
+                break
+            step +=1
+            #-----------------------------------------
+        while(r !=n and c !=n):
+            r = r + 1
+            c = c + 1
+            if row == r and col == c:
+                break
+            step +=1
+            
+        r = r_q
+        c = c_q
+        while(r != 1 and c !=1 ):
+            r = r - 1
+            c = c - 1
+            if row == r and col == c:
+                break
+            step +=1
+        r = r_q
+        c = c_q
+        while(r !=n and c !=n):
+            r = r + 1
+            c = c - 1
+            if row == r and col == c:
+                break
+            step +=1
+        r = r_q
+        c = c_q
+        while(r !=n and c !=n):
+            r = r - 1
+            c = c + 1
+            if row == r and col == c:
+                break
+            step +=1
+        
+        result = step
+        return result
+        
